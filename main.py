@@ -37,7 +37,7 @@ def google_search(query: str):
                     if link:  # Check if link is not None
                         domain = get_schema_and_domain(result.get("href"))
                         domains.append(dict(urls=domain, title=title))
-                append_dict_to_csv("output/google.csv", ["urls", "title"], domains)
+                append_dict_to_csv("google.csv", ["urls", "title"], domains)
                 sb.click("a#pnnext", timeout=30)
                 time.sleep(1)
             except TimeoutError as e:

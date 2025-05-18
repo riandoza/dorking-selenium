@@ -1,4 +1,5 @@
 import csv
+import os
 import time
 from urllib.parse import urlparse
 
@@ -20,7 +21,14 @@ def get_schema_and_domain(url):
     return f"{scheme}://{domain}"
 
 
-def append_dict_to_csv(file_path, field_names, data_dict):
+def append_dict_to_csv(file_name, field_names, data_dict):
+    folder_name = "output"
+    # Create the folder if it doesn't exist
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+
+    file_path = os.path.join(folder_name, file_name)
+
     # writing to csv file
     with open(file_path, "a", newline="") as csvfile:
         # creating a csv dict writer object
