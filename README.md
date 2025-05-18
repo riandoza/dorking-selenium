@@ -11,9 +11,13 @@ To run this script, you will need to have the following installed:
 - Python 3.x
 - selenium
 - csv
+- chromedriver (will automatically download at first time if isn't available)
 
 You can install these using pip:
+
+```
 pip install -r requirements.txt
+```
 
 ## Usage
 
